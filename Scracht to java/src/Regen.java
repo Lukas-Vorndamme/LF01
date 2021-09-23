@@ -1,20 +1,20 @@
-import java.sql.SQLOutput;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Regen {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        double april = 13.4;
-        double mai = 14.6;
-        double juni = 8.3;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String eingabe = br.readLine();
+        double april = Double.parseDouble()
+        double mai;
+        double juni;
 
         double mittelwert = (april + mai + juni) / 3;
 
-
-        System.out.println("April  \t" +  april);
-        System.out.println("Mai \t" + mai);
-        System.out.println("Juni \t" + juni);
-        System.out.println(" Der Mittelwert ist \t" + mittelwert);
+}
 
 
-    }
+
 }
