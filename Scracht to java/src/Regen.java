@@ -21,7 +21,7 @@ public class Regen {
         double juni = Double.parseDouble(eingabe.trim().replace(',', '.'));
 
         double mittelwert = (april + mai + juni) / 3;
-        System.out.println("Erfasse denn mittelwert der 3 monate \t "  + mittelwert);
+        System.out.println("Der Mittelwert der 3 Monate ist \t "  + mittelwert);
 
 
 
