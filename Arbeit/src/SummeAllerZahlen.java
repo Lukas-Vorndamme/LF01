@@ -7,23 +7,26 @@ public class SummeAllerZahlen {
         System.out.println("Bitte gib n ein");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String eingabe = br.readLine();
-        double n = Double.parseDouble(eingabe.trim().replace(',', '.'));
+        int n = (int) Double.parseDouble(eingabe.trim());
 
 
 
-int summe = 0;
-// For schleife
+
+
+        int summe = 0;
+        // For schleife
         for (int m = 1; m <= n; m++)
         summe = summe + m;{
-            System.out.println("das ergebnis ist " + summe  );
+            System.out.println("Das Ergebnis ist " + summe  );
         }
 
         // Do Schleifen Variante
 
-int summe2 = 0;
+
+        int summe2 = 0;
         int v= 1;
 
-        double i = Double.parseDouble(eingabe.trim().replace(',', '.'));
+        int i = (int) Double.parseDouble(eingabe.trim().replace(',', '.'));
         do
         {
 
@@ -33,23 +36,27 @@ int summe2 = 0;
         } while (v <= i);
 
         {
-            System.out.println("das egebnis ist " + summe2);}
+            System.out.println("Das Ergebnis ist " + summe2);
+        }
 
 
         // while schleife
-int b = 1;
-int summe3 = 0;
-        double h = Double.parseDouble(eingabe.trim().replace(',', '.'));
+
+        int b = 1;
+
+        int summe3 = 0;
+        int h = (int) Double.parseDouble(eingabe.trim().replace(',', '.'));
         while (b <= h ) {
 
             summe3 = summe3 + b;
             b = b + 1;
         }
         {
-            System.out.println("das ergebnis ist " + summe3);}
+            System.out.println("Das Ergebnis ist " + summe3);
+        }
 
 
 
 
-    }
-}
+            }
+     }
