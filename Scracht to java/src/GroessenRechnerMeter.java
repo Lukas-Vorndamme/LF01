@@ -13,7 +13,7 @@ public class GroessenRechnerMeter {
         double mm = m/1000;
         double cm = m/100;
         double dm = m/10;
-        double km = m*1000;
+        double km = m/1000;
 
         System.out.println("Die leange ist in mm \t" + mm );
         System.out.println("Die leange ist in cm \t" + cm );

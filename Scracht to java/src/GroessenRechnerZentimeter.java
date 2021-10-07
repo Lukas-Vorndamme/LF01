@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 public class GroessenRechnerZentimeter {
     public static void main(String[] args) throws IOException {
-        System.out.println("Gibt die leange in cm an");
+        System.out.println("Gibt die leange in cm an (cm)");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String eingabe= br.readLine();
 
