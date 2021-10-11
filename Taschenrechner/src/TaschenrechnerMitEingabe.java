@@ -17,18 +17,19 @@ public class TaschenrechnerMitEingabe {
 
         String rechenoperator = br.readLine();
         if (rechenoperator.equals("+")){
-            System.out.println("Das Ergebnis ist " + (zahl1+zahl2));
+            System.out.println("Das Ergebnis ist " + (zahl1 + zahl2) );
         }
         else if (rechenoperator.equals("-")) {
-            System.out.println( " Das Ergebnis ist " + (zahl1-zahl2));
+            System.out.println( " Das Ergebnis ist " + (zahl1-zahl2 ));
         }
         else if (rechenoperator.equals("*")) {
-            System.out.println("Das Ergebnis ist " + (zahl1 * zahl2));
+            System.out.println("Das Ergebnis ist " +  (zahl1 * zahl2 ));
         }
         else if (rechenoperator.equals("/")) {
-            System.out.println("Das Ergebnis ist " + (zahl1 / zahl2));
+            System.out.println("Das Ergebnis ist " +  (zahl1 / zahl2 ));
         }
 
 
     }
+
 }
