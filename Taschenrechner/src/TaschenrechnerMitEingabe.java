@@ -12,18 +12,15 @@ public class TaschenrechnerMitEingabe {
         System.out.println(" Gib die zweite zahl ein ");
         eingabe = br.readLine();
         double zahl2 = Double.parseDouble(eingabe.trim().replace(',', '.'));
-        double zahl3 = zahl1-zahl2;
-
 
         System.out.println("Gib die rechenoperation an ");
 
-
         String rechenoperator = br.readLine();
         if (rechenoperator.equals("+")){
-            System.out.println("Das ergebnis ist " + zahl1+zahl2);
+            System.out.println("Das ergebnis ist " + (zahl1+zahl2));
         }
         else if (rechenoperator.equals("-")) {
-            System.out.println( " Das ergebnis ist " + zahl3);
+            System.out.println( " Das ergebnis ist " + (zahl1-zahl2));
         }
         else if (rechenoperator.equals("*")) {
             System.out.println("Das ergebnis ist " + zahl1 * zahl2);
