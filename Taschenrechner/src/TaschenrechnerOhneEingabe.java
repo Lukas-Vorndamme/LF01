@@ -11,6 +11,7 @@ public class TaschenrechnerOhneEingabe {
          quotientGerundet = quotientGerundet/100000;
          double qoutient = kommazahl/kommazahl2;
 
+
          System.out.println("Zahl 1 ist \t\t\t\t\t\t\t\t\t\t\t"+kommazahl);
         System.out.println("Zahl 2 ist \t\t\t\t\t\t\t\t\t\t\t"+kommazahl2);
         System.out.println("Die Summe der beiden zahlen ist \t\t\t\t\t" +summe );

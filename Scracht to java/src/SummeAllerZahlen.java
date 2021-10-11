@@ -12,7 +12,6 @@ public class SummeAllerZahlen {
 
 
 
-
         int summe = 0;
         // For schleife
         for (int m = 1; m <= n; m++)
