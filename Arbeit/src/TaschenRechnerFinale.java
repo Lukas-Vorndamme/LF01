@@ -53,8 +53,14 @@ public class TaschenRechnerFinale {
 
 
             if (rechenoperation.equals("+")) {
-                System.out.println((Summannd + Summannd2));
-            }
+                System.out.println((Summannd + Summannd2)); }
+            else if (rechenoperation.equals("-")){
+                System.out.println((Minuend-Subtrahend));}
+            else if (rechenoperation.equals("*")){
+                System.out.println((Faktor1*Faktor2 ));}
+            else if (rechenoperation.equals("/")){
+                System.out.println((Dividend/Divisor));}
+
 
 
         }while ();
