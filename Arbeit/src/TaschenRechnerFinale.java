@@ -5,10 +5,17 @@ import java.io.InputStreamReader;
 public class TaschenRechnerFinale {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        String rechenoperation = br.readLine();
         String eingabe = br.readLine();
+        int antwort = Integer.parseInt(eingabe.trim().replace(',','.'));
+        do {
 
+            System.out.println("[+] Für Addition");
+            System.out.println("[-] Für Subtraktion");
+            System.out.println("[*] Für Multiplikation");
+            System.out.println("[/] Für Divison");
+            System.out.println("[p] Für Potenzieren");
+            System.out.println("[w] Für Wurzel");
+            System.out.println("Gib die gewünschte rechenoperation an ");
 
         double Summannd = Double.parseDouble(eingabe.trim().replace(',', '.'));
         double Summannd2 = Double.parseDouble(eingabe.trim().replace(',', '.'));
@@ -22,19 +29,16 @@ public class TaschenRechnerFinale {
         double exponent = Double.parseDouble(eingabe.trim().replace(',', '.'));
         double Radikand = Double.parseDouble(eingabe.trim().replace(',', '.'));
 
-        do {
-            System.out.println("[+] Für Addition");
-            System.out.println("[-] Für Subtraktion");
-            System.out.println("[*] Für Multiplikation");
-            System.out.println("[/] Für Divison");
-            System.out.println("[p] Für Potenzieren");
-            System.out.println("[w] Für Wurzel");
-            System.out.println("Gib die gewünschte rechenoperation an ");
 
 
+
+
+
+            String rechenoperation = br.readLine();
             if (rechenoperation.equals("+")) {
                 System.out.println(" Gib denn Summanden an");
                 System.out.println(" Gib denn zweiten Summanden an");
+
             } else if (rechenoperation.equals("-")) {
                 System.out.println("Minuend");
                 System.out.println("Subtrahend");
@@ -60,9 +64,17 @@ public class TaschenRechnerFinale {
                 System.out.println((Faktor1*Faktor2 ));}
             else if (rechenoperation.equals("/")){
                 System.out.println((Dividend/Divisor));}
+            else if (rechenoperation.equals("p")){
+                System.out.println(Math.pow (basis, exponent));  }
+            else if (rechenoperation.equals("w")){
+                System.out.println(Math.sqrt(Radikand));}
+
+            System.out.println("Willst du das programm Wiederholen?");
+            System.out.println("Ja für wiederholen");
+            System.out.println("Nein für beenden ");
+            System.out.println("1 für Ja und 2 für Nein");
 
 
-
-        }while ();
+        }while (antwort == 1);
     }
 }
