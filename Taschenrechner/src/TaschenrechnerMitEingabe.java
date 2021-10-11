@@ -7,26 +7,30 @@ public class TaschenrechnerMitEingabe {
         System.out.println("Gib die erste zahl an ");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String eingabe = br.readLine();
-        char eingabe9 = (char)br.read();
 
-        double zahl1 = Double.parseDouble(eingabe.trim().replace(',', '.'));
+        double  zahl1 =  Double.parseDouble(eingabe.trim().replace(',', '.'));
         System.out.println(" Gib die zweite zahl ein ");
         eingabe = br.readLine();
         double zahl2 = Double.parseDouble(eingabe.trim().replace(',', '.'));
+        double zahl3 = zahl1-zahl2;
 
 
         System.out.println("Gib die rechenoperation an ");
-        eingabe9 = (char)br.read();
-        char eingabe2 = '/';
-        eingabe9 = (char)br.read();
-        char eingabe3 = '*';
-        eingabe9 = (char)br.read();
-        char eingabe4 = '+';
-        eingabe9 = (char)br.read();
-        char eingabe5 = '-';
 
 
-        if
+        String rechenoperator = br.readLine();
+        if (rechenoperator.equals("+")){
+            System.out.println("Das ergebnis ist " + zahl1+zahl2);
+        }
+        else if (rechenoperator.equals("-")) {
+            System.out.println( " Das ergebnis ist " + zahl3);
+        }
+        else if (rechenoperator.equals("*")) {
+            System.out.println("Das ergebnis ist " + zahl1 * zahl2);
+        }
+        else if (rechenoperator.equals("/")) {
+            System.out.println("Das ergebnis ist " + zahl1 / zahl2);
+        }
 
 
     }
