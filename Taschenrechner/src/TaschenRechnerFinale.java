@@ -2,13 +2,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class TaschenrechnerFinaleVersuch2 {
+public class TaschenRechnerFinale {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        boolean wiederholen;
-        String wiederholung;
+        String antwort;
         do {
-            wiederholen = false;
             System.out.println("[+] Für Addition");
             System.out.println("[-] Für Subtraktion");
             System.out.println("[*] Für Multiplikation");
@@ -18,61 +16,71 @@ public class TaschenrechnerFinaleVersuch2 {
             System.out.println("Gib die gewünschte rechenoperation an ");
 
 
+
             String rechenoperation;
             rechenoperation = br.readLine();
             if (rechenoperation.equals("+")) {
-                System.out.println(" Gib denn Summanden an");
+
+                System.out.println(" Gib den Summanden an");
                 String eingabe = br.readLine();
                 double Summannd = Double.parseDouble(eingabe.trim().replace(',', '.'));
-                System.out.println(" Gib denn zweiten Summanden an");
+                System.out.println(" Gib den zweiten Summanden an");
                 eingabe = br.readLine();
                 double Summannd2 = Double.parseDouble(eingabe.trim().replace(',', '.'));
                 System.out.println(Summannd + Summannd2);
+
             } else if (rechenoperation.equals("-")) {
-                System.out.println("Minuend");
-                System.out.println("Subtrahend");
+                System.out.println("Bitte gib den Minuend ein");
+
                 String eingabe = br.readLine();
                 double Minuend = Double.parseDouble(eingabe.trim().replace(',', '.'));
+                System.out.println("Bitte gib den Subtrahend ein");
+                eingabe = br.readLine();
                 double Subtrahend = Double.parseDouble(eingabe.trim().replace(',', '.'));
                 System.out.println(Minuend - Subtrahend);
+
             } else if (rechenoperation.equals("*")) {
-                System.out.println("1 Faktor");
+                System.out.println("Bitte gib den 1. Faktor ein");
                 String eingabe = br.readLine();
                 double Faktor1 = Double.parseDouble(eingabe.trim().replace(',', '.'));
-
-                System.out.println("2 Faktor");
+                System.out.println("Bitte gib den 2. Faktor ein");
                 eingabe = br.readLine();
                 double Faktor2 = Double.parseDouble(eingabe.trim().replace(',', '.'));
                 System.out.println(Faktor1 * Faktor2);
+
             } else if (rechenoperation.equals("/")) {
-                System.out.println("Dividend");
-                System.out.println("Divisor");
+                System.out.println(" Bitte gib den Dividend ein");
                 String eingabe = br.readLine();
                 double Dividend = Double.parseDouble(eingabe.trim().replace(',', '.'));
+
+                System.out.println("Bitte gib den Divisor ein");
+                eingabe = br.readLine();
                 double Divisor = Double.parseDouble(eingabe.trim().replace(',', '.'));
                 System.out.println(Dividend / Divisor);
+
             } else if (rechenoperation.equals("p")) {
-                System.out.println("basis");
-                System.out.println("exponent");
+                System.out.println("Bitte gib die basis an");
                 String eingabe = br.readLine();
                 double basis = Double.parseDouble(eingabe.trim().replace(',', '.'));
-                double exponent = Double.parseDouble(eingabe.trim().replace(',', '.'));
+
+                System.out.println("Bitte gib den exponent ein");
+                eingabe = br.readLine();
+                 double exponent = Double.parseDouble(eingabe.trim().replace(',', '.'));
+                System.out.println(Math.pow(basis, exponent));
                 System.out.println(Math.pow(basis, exponent));
             } else if (rechenoperation.equals("w")) {
-                System.out.println("Radikand ");
+                System.out.println("Bitte gib den Radikand ein");
                 String eingabe = br.readLine();
                 double Radikand = Double.parseDouble(eingabe.trim().replace(',', '.'));
                 System.out.println(Math.sqrt(Radikand));
             }
-            System.out.println("Willst du das programm Wiederholen?");
-            System.out.println("Ja für wiederholen");
-            System.out.println("Nein für beenden ");
-            System.out.println("Ja oder Nein");
-            wiederholung = br.readLine().trim();
-            if (wiederholung.equalsIgnoreCase("Ja"))wiederholen = true;
+            {
+                System.out.println("Möchten sie das programm Wiederholen?");
+                System.out.println("Ja für Wiederholen");
+                System.out.println("Nein für beenden ");
 
-
-        } while (wiederholen);
+                antwort = br.readLine().replace("J","Ja").replace("j","Ja");
+        }
+        } while (antwort.equalsIgnoreCase("Ja"));
     }
 }
-
