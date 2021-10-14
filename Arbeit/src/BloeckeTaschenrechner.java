@@ -31,14 +31,15 @@ public class BloeckeTaschenrechner {
             } else if (rechenoperation.equalsIgnoreCase("p")) {
                 potenzen();
 
-            } else if (rechenoperation.equalsIgnoreCase("w")) {
+            } else if (rechenoperation.equalsIgnoreCase("w"))
                 wurzel();
-            }
+
 
             wiederholen();
 
             wiederholung = br.readLine().trim();
             if (wiederholung.equalsIgnoreCase("Ja")) wiederholen = true;
+            if (wiederholung.equalsIgnoreCase("Jaa")) wiederholen = true;
         } while (wiederholen);
 
 
