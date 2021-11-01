@@ -8,7 +8,6 @@ public class BloeckeTaschenrechner {
         String wiederholung;
         boolean wiederholen;
 
-
         do {
             wiederholen = false;
 
@@ -45,7 +44,7 @@ public class BloeckeTaschenrechner {
 
     }
 
-    private static void abfrage () {
+    private static void abfrage() {
         System.out.println("[+] Für Addition");
         System.out.println("[-] Für Subtraktion");
         System.out.println("[*] Für Multiplikation");
