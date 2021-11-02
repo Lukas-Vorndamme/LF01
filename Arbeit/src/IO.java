@@ -85,6 +85,11 @@ public class IO {
             System.out.println("Versuchen sie es nochmal mit einer normalen antwort");
         }
     }
+    
+
+
+
+
 }
 
 
