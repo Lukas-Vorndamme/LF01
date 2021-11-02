@@ -6,9 +6,11 @@ public class IOtest  {
        String eingabe = IO.readString();
         System.out.println(eingabe);
 
-
+        System.out.println("Bitte gib eine ganzzahl ein");
         System.out.println(IO.readInteger());
+        System.out.println("Bittegib eine kommazahl ein");
         System.out.println( IO.readDouble());
+        System.out.println("Ja oder Nein?");
         System.out.println(IO.readBoolean());
 
     }

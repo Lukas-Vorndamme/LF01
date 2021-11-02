@@ -64,8 +64,6 @@ public class IO {
     public static boolean readBoolean() throws IOException {
         while (true) {
             String eingabe = readString();
-            if (eingabe != null)
-                System.out.println("Versuchen sie es nochmal mit einer normalen antwort");
 
 
             if (eingabe.equalsIgnoreCase("ja")
@@ -84,6 +82,7 @@ public class IO {
                 return false;
 
             }
+            System.out.println("Versuchen sie es nochmal mit einer normalen antwort");
         }
     }
 }
