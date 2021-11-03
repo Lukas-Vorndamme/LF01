@@ -8,24 +8,27 @@ public class IO {
      * return den eingegebenen Text
      * throws IOException
      */
-    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+    /**
+     * String eingabe;
+     * eingabe = br.readLine();
+     *
+     * @return eingabe;
+     * @throws IOException eingabe
+     */
     public static String readString() throws IOException {
         String eingabe;
         eingabe = br.readLine();
         return eingabe;
-/**
- * String eingabe;
- *         eingabe = br.readLine();
- *         return eingabe;
- */
+
     }
 
     /**
      * Liest Ganzzahlen ein
      *
      * @return gibt diese zahl wieder aus
-     * @throws IOException
+     * @throws IOException eingabe
      */
     public static int readInteger() throws IOException {
         while (true) {
@@ -42,8 +45,8 @@ public class IO {
      * liest kommazahlen ein
      * gibt die kommazahl wieder aus
      *
-     * @return
-     * @throws IOException
+     * @return kommazahlen
+     * @throws IOException eingabe
      */
     public static double readDouble() throws IOException {
         while (true) {
@@ -58,8 +61,8 @@ public class IO {
     /**
      * Ja oder nein
      *
-     * @return
-     * @throws IOException
+     * @return ja oder nein
+     * @throws IOException eingabe
      */
     public static boolean readBoolean() throws IOException {
         while (true) {
@@ -85,11 +88,6 @@ public class IO {
             System.out.println("Versuchen sie es nochmal mit einer normalen antwort");
         }
     }
-    
-
-
-
-
 }
 
 
