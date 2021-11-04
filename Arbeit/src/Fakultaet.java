@@ -6,8 +6,8 @@ public class Fakultaet {
         int zahl = IO.readInteger();
         System.out.println("Gib die endzahl ein");
         int ende = IO.readInteger();
-        for (int quadrat = zahl; quadrat <= ende; quadrat+=1){
-            double ergebnis = quadrat*quadrat;
+        for (int quadrat = zahl; quadrat <= ende; quadrat += 1) {
+            double ergebnis = Math.pow(quadrat, 2);
             System.out.println(ergebnis);
         }
     }
