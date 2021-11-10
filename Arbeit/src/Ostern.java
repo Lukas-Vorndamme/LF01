@@ -6,7 +6,7 @@ public class Ostern {
 
         int m =0;
         int n = 0;
-        boolean wiederhoen;
+        boolean wiederholen;
         do{
             int jahreszahl = IO.readInteger();
             int resta = jahreszahl % 19;
@@ -30,10 +30,10 @@ public class Ostern {
         int reste = (2*restb+4*restc+6*restd+n) % 7;
         int ostern = 22+restd+reste;
         int ostern2 = restd+reste-9;
-        if (ostern < 31){
+        if (ostern <= 31){
         System.out.println("ostern ist in dem angegebenen jahr am " + ostern + " märz");
 
-        } else if (ostern >31){
+        } else if (ostern > 32){
         System.out.println("ostern ist in dem angegebenen jahr am " + ostern2 + " april");
 
         } else if (ostern2 == 26) {
@@ -43,6 +43,6 @@ public class Ostern {
             System.out.println("ostern ist in dem angegebenen jahr am 18 april");
         }
             System.out.println("Willst du noch ein weiteres jahr ausrechnen?");
-        wiederhoen = IO.readBoolean();
-    }while (wiederhoen);
+        wiederholen = IO.readBoolean();
+    }while (wiederholen);
 }}
