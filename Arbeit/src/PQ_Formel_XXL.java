@@ -14,9 +14,11 @@ public class PQ_Formel_XXL {
                 double d = Math.pow(p / 2, 2) - q;
                 double x1 = -(p / 2) + Math.sqrt(Math.pow(p / 2, 2)) - q;
                 double x2 = -(p / 2) - Math.sqrt(Math.pow(p / 2, 2)) - q;
-                if (d <= 0) {
+                if (d < 0) {
                     System.out.println("Die rechnung ist nicht möglich");
-                } else {
+                } else if (d == 0) {
+                    System.out.println(d);
+                }else {
                     System.out.println(x1);
                     System.out.println(x2);
                 }
@@ -31,9 +33,11 @@ public class PQ_Formel_XXL {
                 double d = Math.pow(b, 2 - 4 * a * c);
                 double x1 = -(b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
                 double x2 = -(b - Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
-                if (d <= 0) {
+                if (d < 0) {
                     System.out.println("Die rechnung ist nicht möglich");
-                } else {
+                } else if (d == 0){
+                    System.out.println(-b / (2 * a));
+                }else {
                     System.out.println(x1);
                     System.out.println(x2);
                 }
