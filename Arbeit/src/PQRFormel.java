@@ -3,7 +3,7 @@ import java.io.IOException;
 public class PQRFormel {
     public static void main(String[] args) throws IOException {
 
-        boolean wiederholen = false;
+        boolean wiederholen;
         do {
         System.out.println("Gib p ein");
         double p = IO.readDouble();
