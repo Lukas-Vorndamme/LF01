@@ -17,12 +17,11 @@ public class Zellwachstum {
             System.out.println("Tage der wiederholung\t " + tage);
             System.out.println("Tag 0\t\t " + zellmengen);
             for (int n = 1; n <= tage; n++) {
-                zellmenge = zellmenge * wachstumsfaktor;
+                zellmenge = zellmenge *wachstumsfaktor;
                 System.out.println("Tag " + n + "\t" + "\t " + zellmenge);
             }
             System.out.println("Möchten sie Weiter Wachstumsprozesse berechnen?");
             wiederholen = IO.readBoolean();
         } while (wiederholen);
-
     }
 }
