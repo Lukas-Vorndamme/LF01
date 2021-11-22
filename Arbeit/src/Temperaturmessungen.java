@@ -70,6 +70,8 @@ public class Temperaturmessungen {
                 dif = tag5 - tag6;
             } else if (tag6 - tag7 > dif) {
                 dif = tag6 - tag7;
+            }else if (tag7-tag6 > dif){
+                dif = tag7-tag6;
             }
 
 

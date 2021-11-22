@@ -1,20 +1,72 @@
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 public class Array {
     public static void main(String[] args) throws IOException {
-        double[] temp = new double[7];
-        double ad = 0;
+        double[] tag = new double[7];
+
+        double addition = 0;
+
         double max = 0;
-        for (int i = 0; i < temp.length; i++) {
-            System.out.print("Gib die Temeratur ein tag "+(i +1) +": ");
-            temp[i] = IO.readDouble();
-            ad += temp[i];
-            if (max < temp[i]) {
-                max = temp[i];
+
+        double min = 100000;
+
+        double diff;
+
+        DecimalFormat f = new DecimalFormat("#0.00");
+
+        for (int i = 0; i < tag.length; i++) {
+
+
+            System.out.println("gib die Temperatur von tag " + (i + 1));
+
+            tag[i] = IO.readDouble();
+
+            addition += tag[i];
+
+            if (tag[i] > max) {
+
+                max = tag[i];
+
+            }
+            if (tag[i] < min) {
+
+                min = tag[i];
+
             }
 
-        }ad = ad / temp.length;
-        System.out.println("Der Mittelwert ist " + ad );
-        System.out.println("Die höchste temeratur ist "+ max);
+        }
+
+        if (tag[0] - tag[1] > tag[2] - tag[3]) {
+
+            diff = tag[1] - tag[2];
+
+        } else if (tag[2] - tag[3] > tag[3] - tag[4]) {
+
+            diff = tag[2] - tag[3];
+
+        } else if (tag[3] - tag[4] > tag[4] - tag[5]) {
+
+            diff = tag[3] - tag[4];
+
+        } else if (tag[4] - tag[5] > tag[5] - tag[6]) {
+
+            diff = tag[4];
+
+        } else {
+
+            diff = tag[5] - tag[6];
+
+        }
+
+        System.out.println("Der Mittelwer ist " + f.format(addition / tag.length));
+
+        System.out.println("Maximal wert " + f.format(max));
+
+        System.out.println("Min " + f.format(min));
+
+        System.out.println("Spannweite von " + f.format(max - min));
+
+        System.out.println("max differenz " + f.format(diff));
     }
 }
