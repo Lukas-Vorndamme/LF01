@@ -11,14 +11,14 @@ public class Array {
 
         double min = 100000;
 
-        double diff;
+        double diff = -100000;
 
         DecimalFormat f = new DecimalFormat("#0.00");
 
         for (int i = 0; i < tag.length; i++) {
 
 
-            System.out.println("gib die Temperatur von tag " + (i + 1));
+            System.out.print("gib die Temperatur von tag " + (i + 1) + ":");
 
             tag[i] = IO.readDouble();
 
@@ -39,6 +39,10 @@ public class Array {
 
         if (tag[0] - tag[1] > tag[2] - tag[3]) {
 
+            diff = tag[0] - tag[1];
+
+        } else if (tag[1] - tag[2] > tag[2] - tag[3]) {
+
             diff = tag[1] - tag[2];
 
         } else if (tag[2] - tag[3] > tag[3] - tag[4]) {
@@ -49,15 +53,15 @@ public class Array {
 
             diff = tag[3] - tag[4];
 
-        } else if (tag[4] - tag[5] > tag[5] - tag[6]) {
+        } else if (tag[4] - tag[5] > tag[5] - tag[6]){
 
-            diff = tag[4];
+            diff = tag[4] - tag[5];
 
-        } else {
+        }else if (tag[5] - tag[6] > diff){
+            diff = tag[5]- tag[6];
 
-            diff = tag[5] - tag[6];
-
-        }
+        }else if (tag[6] - tag[5] > diff){
+            diff = tag[6] - tag[5];}
 
         System.out.println("Der Mittelwer ist " + f.format(addition / tag.length));
 
