@@ -16,7 +16,5 @@ public class Array {
         }ad = ad / temp.length;
         System.out.println("Der Mittelwert ist " + ad );
         System.out.println("Die höchste temeratur ist "+ max);
-
-
     }
 }
