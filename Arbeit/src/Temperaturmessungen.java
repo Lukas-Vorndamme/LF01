@@ -59,20 +59,18 @@ public class Temperaturmessungen {
             if (tag7 < x) {
                 x = tag7;
             }
-            double dif = 0;
-            if (tag2 - tag1 > tag3 - tag2) {
+            double dif = -10000000;
+            // tag 1
+            if (tag2 - tag1 > tag1 - tag2) {
                 dif = tag2 - tag1;
-            } else if (tag2 - tag3 > tag4 - tag3) {
-                dif = tag2 - tag3;
-            } else if (tag4 - tag3 > tag5 - tag4) {
-                dif = tag4 - tag3;
-            } else if (tag5 - tag6 > tag7 - tag6) {
-                dif = tag5 - tag6;
-            } else if (tag6 - tag7 > dif) {
-                dif = tag6 - tag7;
-            }else if (tag7-tag6 > dif){
-                dif = tag7-tag6;
+            }else if(tag1 - tag2 > tag2 - tag1){
+                dif = tag1 -tag2;
+            } else if (tag3 - tag2 > tag2 - tag3) {
+                dif = tag3 - tag2;
+            }else if(tag2 - tag3 > tag3 - tag2){
+                dif = tag2 -tag3;
             }
+
 
 
             System.out.println("Der Mittelwert der temperarautren ist " + f.format(mittelwert));
@@ -89,4 +87,15 @@ public class Temperaturmessungen {
 
     }
 
-}
+}   //else if (tag2 - tag3 > tag3 - tag2) {
+      //  dif = tag2 - tag3;
+        //}else if(tag3 - tag2 > tag2 - tag3) {
+        //dif = tag3 - tag2;
+        //} else if (tag4 - tag3 > tag5 - tag4) {
+        //dif = tag4 - tag3;
+       // } else if (tag5 - tag6 > tag7 - tag6) {
+      //  dif = tag5 - tag6;
+      //  } else if (tag6 - tag7 > dif) {
+      //  dif = tag6 - tag7;
+      //  }else if (tag7-tag6 > dif){
+      //  dif = tag7-tag6;}
