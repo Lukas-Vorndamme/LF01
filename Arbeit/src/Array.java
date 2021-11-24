@@ -3,7 +3,7 @@ import java.text.DecimalFormat;
 
 public class Array {
     public static void main(String[] args) throws IOException {
-        double[] tag = new double[7];
+        double[] tag = IO.readArrayDouble();
 
         double addition = 0;
 
