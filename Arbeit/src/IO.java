@@ -98,7 +98,7 @@ public class IO {
     public static double[] readArrayDouble() throws IOException {
         System.out.println("Wie lange soll das Array sein  (Nur ganz zaheln)");
         int n = IO.readInteger();
-        double[] array = new double[n];
+        double[] array = readArrayDouble(n);
 
         return array;
 
@@ -122,9 +122,9 @@ public class IO {
      * @throws IOException .
      */
     public static int[] readArrayInteger() throws IOException {
-        System.out.println("Wie lange soll das Array sein  (Nur ganz zaheln)");
+        System.out.println("Wie lange soll das Array sein  (Nur ganz zahlen)");
         int n = IO.readInteger();
-        int[] array = new int[n];
+        int[] array = IO.readArrayInteger(n);
 
         return array;
 
