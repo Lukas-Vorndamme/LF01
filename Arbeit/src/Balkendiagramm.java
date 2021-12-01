@@ -2,7 +2,6 @@ import java.io.IOException;
 
 public class Balkendiagramm {
     public static void main(String[] args) throws IOException {
-        System.out.println("Gib die werte ein");
         int[] p = IO.readArrayInteger();
         System.out.println("Ergebniss ");
         for (int i = 0; i < p.length; i++){
