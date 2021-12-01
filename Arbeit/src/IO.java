@@ -103,7 +103,8 @@ public class IO {
         return array;
 
     }
-// n muss vorher im programm existieren !!
+
+    // n muss vorher im programm existieren !!
     public static double[] readArrayDouble(int n) throws IOException {
         double[] array = new double[n];
         for (int i = 0; i < array.length; i++) {
@@ -129,6 +130,7 @@ public class IO {
         return array;
 
     }
+
     // n muss vorher im programm existieren !!
     public static int[] readArrayInteger(int n) throws IOException {
         int[] array = new int[n];
@@ -154,6 +156,7 @@ public class IO {
 
         return array;
     }
+
     // n muss vorher im programm existieren !!
     public static String[] readStringArray(int n) throws IOException {
         String[] array = new String[n];
@@ -165,6 +168,7 @@ public class IO {
 
 
     }
+
 
 
 }

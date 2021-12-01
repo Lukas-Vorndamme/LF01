@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.text.DecimalFormat;
 
-public class runden {
+public class Runden {
     public static void main(String[] args) throws IOException {
 
         DecimalFormat f = new DecimalFormat("#0.00");

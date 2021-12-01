@@ -52,15 +52,16 @@ public class Array {
 
             diff = tag[3] - tag[4];
 
-        } else if (tag[4] - tag[5] > tag[5] - tag[6]){
+        } else if (tag[4] - tag[5] > tag[5] - tag[6]) {
 
             diff = tag[4] - tag[5];
 
-        }else if (tag[5] - tag[6] > diff){
-            diff = tag[5]- tag[6];
+        } else if (tag[5] - tag[6] > diff) {
+            diff = tag[5] - tag[6];
 
-        }else if (tag[6] - tag[5] > diff){
-            diff = tag[6] - tag[5];}
+        } else if (tag[6] - tag[5] > diff) {
+            diff = tag[6] - tag[5];
+        }
 
         System.out.println("Der Mittelwer ist " + f.format(addition / tag.length));
 

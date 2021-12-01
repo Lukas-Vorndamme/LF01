@@ -26,5 +26,7 @@ public class Maxima {
         a[index1] = a[index1] + a[0] - (a[0] = a[index1]);
 
         System.out.println("Der Größte wert ist = " + max1);
-        System.out.println("Der Zweit größte wert ist  = " + max2);}}
+        System.out.println("Der Zweit größte wert ist  = " + max2);
+    }
+}
 
