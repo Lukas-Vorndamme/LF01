@@ -12,7 +12,7 @@ public class Lagerbestand {
         System.out.println("Erfassen sie jetzt noch die anzahl der artikel");
         int[] a = IO.readArrayInteger(n);
       for (int i = 0; i < n ; i++){
-           preis = (a[i] * p[i]);
+           preis = preis + (a[i] * p[i]);
          anzahl = anzahl + a[i];
       }
         System.out.println("Sie haben noch " +anzahl + " Artikel im lager");

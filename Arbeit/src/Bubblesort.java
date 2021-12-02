@@ -8,50 +8,42 @@ public class Bubblesort {
         System.out.println("G = Groß  K = Klein");
         String a = IO.readString();
 
-        if (a.equalsIgnoreCase("g")){
+        if (a.equalsIgnoreCase("g")) {
             do {
-                w  =false;
-                for (int i = 0; i < zahlen.length -1; i++){
-                    if (zahlen[i] > zahlen[i+1]){
+                w = false;
+                for (int i = 0; i < zahlen.length - 1; i++) {
+                    if (zahlen[i] > zahlen[i + 1]) {
                         int temp = zahlen[i];
-                        zahlen[i] = zahlen[i+1];
-                        zahlen[i +1] = temp;
+                        zahlen[i] = zahlen[i + 1];
+                        zahlen[i + 1] = temp;
                         w = true;
                     }
                 }
-            }while (w);
+            } while (w);
 
-            for (int i = 0; i < zahlen.length; i++){
-                System.out.println(zahlen[i] +"\t");
+            for (int i = 0; i < zahlen.length; i++) {
+                System.out.println(zahlen[i] + "\t");
             }
-        }else if (a.equalsIgnoreCase("k")){
+        } else if (a.equalsIgnoreCase("k")) {
             do {
-                w  =false;
-                for (int i = 0; i < zahlen.length -1; i++){
-                    if (zahlen[i] < zahlen[i+1]){
+                w = false;
+                for (int i = 0; i < zahlen.length - 1; i++) {
+                    if (zahlen[i] < zahlen[i + 1]) {
                         int temp = zahlen[i];
-                        zahlen[i] = zahlen[i+1];
-                        zahlen[i +1] = temp;
+                        zahlen[i] = zahlen[i + 1];
+                        zahlen[i + 1] = temp;
                         w = true;
                     }
                 }
-            }while (w);
+            } while (w);
 
-            for (int i = 0; i < zahlen.length; i++){
-                System.out.println(zahlen[i] +"\t");
+            for (int i = 0; i < zahlen.length; i++) {
+                System.out.println(zahlen[i] + "\t");
             }
         }
 
 
-
-
-
-
-
-
-
-
-      }
+    }
 
 
 }
