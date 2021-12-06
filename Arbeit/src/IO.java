@@ -221,6 +221,18 @@ public class IO {
 
     }
 
+    public static int[][]  systemOutPrintIntArray2D(int[][] array) throws IOException{
+
+        for (int i = 0; i < array.length; i++){
+            System.out.println();
+            for (int j = 0; j < array[i].length; j++){
+                System.out.print(array[i][j] + "\t");
+            }
+        }
+
+     return array;
+    }
+
     public static double[][] readDoubleArray2D() throws IOException {
 
         System.out.print("Wie viele Zeilen  : ");
@@ -273,6 +285,18 @@ public class IO {
 
     }
 
+    public static double[][]  systemOutPrintDoubleArray2D(double[][] array) throws IOException{
+
+        for (int i = 0; i < array.length; i++){
+            System.out.println();
+            for (int j = 0; j < array[i].length; j++){
+                System.out.print(array[i][j] + "\t");
+            }
+        }
+
+        return array;
+    }
+
     public static String[][] readStringArray2D() throws IOException {
 
         System.out.print("Wie viele Zeilen  : ");
@@ -323,6 +347,17 @@ public class IO {
         return array;
 
 
+    }
+    public static String[][]  systemOutPrintStringArray2D(String[][] array) throws IOException{
+
+        for (int i = 0; i < array.length; i++){
+            System.out.println();
+            for (int j = 0; j < array[i].length; i++){
+                System.out.print(array[i][j] + "\t");
+            }
+        }
+
+        return array;
     }
 
 
