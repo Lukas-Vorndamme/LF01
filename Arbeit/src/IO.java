@@ -169,6 +169,184 @@ public class IO {
 
     }
 
+    public static int[][] readIntArray2D() throws IOException {
+
+        System.out.println("Wie viele Zeilen");
+
+        int zeilen = readInteger();
+
+        System.out.println("Wie viele Spalten");
+
+        int spalten = readInteger();
+
+        int[][] array = readIntArray2D(zeilen, spalten);
+
+        return array;
+
+
+    }
+
+
+    public static int[][] readIntArray2D(int anzahlZeilen, int anzahlSpalten) throws IOException {
+
+        int[][] array = new int[anzahlZeilen][anzahlSpalten];
+
+        array = readIntArray2D(array);
+
+        return array;
+
+
+    }
+
+
+    public static int[][] readIntArray2D(int[][] array) throws IOException {
+
+        for (int i = 0; i < array.length; i++) {
+
+            System.out.println();
+
+            for (int j = 0; j < array[i].length; j++) {
+
+                System.out.print("Gib den wert ein der an stelle [" + i + "] [" + j + "] stehen soll:");
+
+                array[i][j] = IO.readInteger();
+
+            }
+
+
+        }
+
+        return array;
+
+
+    }
+
+    public static double[][] readDoubleArray2D() throws IOException {
+
+        System.out.println("Wie viele Zeilen");
+
+        int zeilen = readInteger();
+
+        System.out.println("Wie viele Spalten");
+
+        int spalten = readInteger();
+
+        double[][] array = readDoubleArray2D(zeilen, spalten);
+
+        return array;
+
+
+    }
+
+
+    public static double[][] readDoubleArray2D(int anzahlZeilen, int anzahlSpalten) throws IOException {
+
+        double[][] array = new double[anzahlZeilen][anzahlSpalten];
+
+        array = readDoubleArray2D(array);
+
+        return array;
+
+
+    }
+
+
+    public static double[][] readDoubleArray2D(double[][] array) throws IOException {
+
+        for (int i = 0; i < array.length; i++) {
+
+            System.out.println();
+
+            for (int j = 0; j < array[i].length; j++) {
+
+                System.out.print("Gib den wert ein der an stelle [" + i + "] [" + j + "] stehen soll:");
+
+                array[i][j] = IO.readDouble();
+
+            }
+
+
+        }
+
+        return array;
+
+
+    }
+
+    public static String[][] readStringArray2D() throws IOException {
+
+        System.out.println("Wie viele Zeilen");
+
+        int zeilen = readInteger();
+
+        System.out.println("Wie viele Spalten");
+
+        int spalten = readInteger();
+
+        String[][] array = readStringArray2D(zeilen, spalten);
+
+        return array;
+
+
+    }
+
+
+    public static String[][] readStringArray2D(int anzahlZeilen, int anzahlSpalten) throws IOException {
+
+        String[][] array = new String[anzahlZeilen][anzahlSpalten];
+
+        array = readStringArray2D(array);
+
+        return array;
+
+
+    }
+
+
+    public static String[][] readStringArray2D(String[][] array) throws IOException {
+
+        for (int i = 0; i < array.length; i++) {
+
+            System.out.println();
+
+            for (int j = 0; j < array[i].length; j++) {
+
+                System.out.print("Gib den wert ein der an stelle [" + i + "] [" + j + "] stehen soll:");
+
+                array[i][j] = IO.readString();
+
+            }
+
+
+        }
+
+        return array;
+
+
+    }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

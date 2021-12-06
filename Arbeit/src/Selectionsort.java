@@ -7,13 +7,13 @@ public class Selectionsort {
 
 
         ArrayList<Integer> eingabe = new ArrayList<>();
-        for (int i = 0; i < laenge;i++){
-            System.out.println(" Gib werte ein") ;
+        for (int i = 0; i < laenge; i++) {
+            System.out.println(" Gib werte ein");
             int m = IO.readInteger();
             eingabe.add(m);
 
         }
-        int min =  eingabe.get(0);
+        int min = eingabe.get(0);
         int löschen = 0;
         boolean ok;
         int[] sortiert = new int[laenge];
@@ -29,19 +29,17 @@ public class Selectionsort {
                     ok = true;
 
                 }
-                if (i + 1 == laenge){
-                        sortiert[i] = min;
-                        eingabe.remove(löschen);
+                if (i + 1 == laenge) {
+                    sortiert[i] = min;
+                    eingabe.remove(löschen);
                 }
             }
 
 
-        }while(ok);
-        for (int i = 0; i < laenge; i++){
-            System.out.println(sortiert[i]);}
-
-
-
+        } while (ok);
+        for (int i = 0; i < laenge; i++) {
+            System.out.println(sortiert[i]);
+        }
 
 
     }
