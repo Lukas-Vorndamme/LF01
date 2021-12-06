@@ -171,11 +171,11 @@ public class IO {
 
     public static int[][] readIntArray2D() throws IOException {
 
-        System.out.println("Wie viele Zeilen");
+        System.out.print("Wie viele Zeilen : ");
 
         int zeilen = readInteger();
 
-        System.out.println("Wie viele Spalten");
+        System.out.print("Wie viele Spalten : ");
 
         int spalten = readInteger();
 
@@ -223,11 +223,11 @@ public class IO {
 
     public static double[][] readDoubleArray2D() throws IOException {
 
-        System.out.println("Wie viele Zeilen");
+        System.out.print("Wie viele Zeilen  : ");
 
         int zeilen = readInteger();
 
-        System.out.println("Wie viele Spalten");
+        System.out.print("Wie viele Spalten  : ");
 
         int spalten = readInteger();
 
@@ -275,11 +275,11 @@ public class IO {
 
     public static String[][] readStringArray2D() throws IOException {
 
-        System.out.println("Wie viele Zeilen");
+        System.out.print("Wie viele Zeilen  : ");
 
         int zeilen = readInteger();
 
-        System.out.println("Wie viele Spalten");
+        System.out.print("Wie viele Spalten  : ");
 
         int spalten = readInteger();
 
@@ -327,26 +327,3 @@ public class IO {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
