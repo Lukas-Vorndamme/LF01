@@ -6,6 +6,11 @@ public class Tonsignal {
         int wert1 = (ton[0] + ton[1]) / 2;
         int wert2 = 0;
         int n = 0;
+        System.out.println("Altes tonsignal");
+        for (int i = 0; i < ton.length; i++){
+            System.out.print("\t" + ton[i]);
+        }
+        System.out.println();
         System.out.println("Geglättetes signal ");
 
         int[] wert = new int[ton.length];

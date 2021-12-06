@@ -9,7 +9,7 @@ public class Lagerbestand {
         String[] l = IO.readStringArray(n);
         System.out.println("Erfassen sie jetzt die preise der Artikel");
         double[] p = IO.readArrayDouble(n);
-        System.out.println("Erfassen sie jetzt noch die anzahl der artikel");
+        System.out.println("Erfassen sie jetzt noch die anzahl des artikels");
         int[] a = IO.readArrayInteger(n);
       for (int i = 0; i < n ; i++){
            preis = preis + (a[i] * p[i]);
