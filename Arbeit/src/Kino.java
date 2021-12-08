@@ -9,12 +9,15 @@ public class Kino {
             int auswahl = IO.readInteger();
             if (auswahl == 1) {
                 anzeigenSaal(saal);
+                System.out.println();
             }
             if (auswahl == 2){
                 reserviertenPlatz(saal);
+                System.out.println();
             }
             if (auswahl == 3){
                 stornieren(saal);
+                System.out.println();
             }
             System.out.println("Möchten sie noch was machen?");
             w = IO.readBoolean();
