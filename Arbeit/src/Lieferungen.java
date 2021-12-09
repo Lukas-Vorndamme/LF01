@@ -102,12 +102,18 @@ public class Lieferungen {
                 }
                 for (int i = 0; i < anzahl.length; i++){
                     for (int j = 0; j < anzahl[i].length; j++){
-
-
-
-
                     }
                     }
+                int[] zeilensumme = new int[anzahl.length];
+                int[] spaltensumme = new int[anzahl.length] ;
+                for (int i = 0; i < anzahl.length; i++){
+                    for (int j = 0; j < anzahl[i].length; j++){
+                    zeilensumme[i] = zeilensumme[i] + summe[j][0];
+                    spaltensumme[i] = spaltensumme[i] + summe[0][j];
+
+
+                }}
+
                 kunden[0] = "Summe";
                 System.out.print(kunden[0]);
                 for (int i = 1; i < anzahl.length +1; i++) {
@@ -119,9 +125,18 @@ public class Lieferungen {
                     for (int j = 0; j < anzahl[i].length; j++) {
                         System.out.print("\t\t\t" +summe[i][j]  );
 
-
-                    }
+                    } System.out.print( "\t\t" + spaltensumme[i]);
                 }
+                System.out.println();
+                System.out.print("\t\t\t");
+                for (int i = 0; i < anzahl.length; i++){
+                    System.out.print("\t \t\t"+zeilensumme[i]);
+                }
+
+
+
+
+
 
 
             }
