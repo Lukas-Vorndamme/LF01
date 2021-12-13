@@ -108,8 +108,8 @@ public class Lieferungen {
                 int[] spaltensumme = new int[anzahl.length] ;
                 for (int i = 0; i < anzahl.length; i++){
                     for (int j = 0; j < anzahl[i].length; j++){
-                    zeilensumme[i] = zeilensumme[i] + summe[j][0];
-                    spaltensumme[i] = spaltensumme[i] + summe[0][j];
+                    zeilensumme[j] = zeilensumme[j] + summe[i][j];
+                    spaltensumme[j] = spaltensumme[j] + summe[j][i];
 
 
                 }}
