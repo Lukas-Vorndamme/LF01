@@ -12,11 +12,6 @@ public class LieferungMethodenNoah {
     }
 
 
-
-
-
-
-
     private static int[][] erstellenMatrize() throws IOException {
 
         System.out.println("Wie viele Kunden?");
@@ -32,17 +27,13 @@ public class LieferungMethodenNoah {
         String monat = IO.readString();
 
 
-
-
-
         int[][] array = new int[artikel][kunden];
 
-        for (int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
 
-            for (int j = 0; j < array[i].length; j++){
+            for (int j = 0; j < array[i].length; j++) {
 
                 array[i][j] = IO.readInteger();
-
 
 
             }
@@ -50,24 +41,23 @@ public class LieferungMethodenNoah {
         }
 
 
-
-        System.out.print(monat+ "\t" );
+        System.out.print(monat + "\t");
 
         for (int i = 0; i < kunden; i++) {
 
-            System.out.print(" Kunde"+(i + 1) +"\t");
+            System.out.print(" Kunde" + (i + 1) + "\t");
 
         }
 
         System.out.println();
 
-        for (int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
 
-            System.out.print("Artikel"+(i+1)+ "\t");
+            System.out.print("Artikel" + (i + 1) + "\t");
 
-            for (int j = 0; j < array[i].length; j++){
+            for (int j = 0; j < array[i].length; j++) {
 
-                System.out.print(array[i][j]+"\t\t");
+                System.out.print(array[i][j] + "\t\t");
 
             }
 
@@ -76,21 +66,20 @@ public class LieferungMethodenNoah {
         }
 
 
-
         return array;
 
     }
 
-    private static int[][] zusammenRechnen(int[][] array, int[][] array2){
+    private static int[][] zusammenRechnen(int[][] array, int[][] array2) {
 
         String monat = "Summe";
 
         int kunden = 0;
         int spalten = 0;
 
-        for (int i = 0; i < array.length; i++){
-spalten = i+1;
-            for (int j = 0; j < array[i].length; j++){
+        for (int i = 0; i < array.length; i++) {
+            spalten = i + 1;
+            for (int j = 0; j < array[i].length; j++) {
 
                 kunden = j + 1;
 
@@ -100,23 +89,23 @@ spalten = i+1;
 
         }
 
-        System.out.print(monat+ "\t" );
+        System.out.print(monat + "\t");
 
         for (int i = 0; i < kunden; i++) {
 
-            System.out.print(" Kunde"+(i + 1) +"\t");
+            System.out.print(" Kunde" + (i + 1) + "\t");
 
         }
 
         System.out.println();
 
-        for (int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
 
-            System.out.print("Artikel"+(i+1)+ "\t");
+            System.out.print("Artikel" + (i + 1) + "\t");
 
-            for (int j = 0; j < array[i].length; j++){
+            for (int j = 0; j < array[i].length; j++) {
 
-                System.out.print(array[i][j]+"\t\t");
+                System.out.print(array[i][j] + "\t\t");
 
             }
 
@@ -125,19 +114,15 @@ spalten = i+1;
         }
 
 
-
-
-
         System.out.println();
 
         int wert[] = new int[kunden];
         int wert2[] = new int[spalten];
 
 
+        for (int i = 0; i < array.length; i++) {
 
-        for (int i = 0; i < array.length; i++){
-
-            for (int j = 0; j  < array[i].length; j++){
+            for (int j = 0; j < array[i].length; j++) {
 
                 wert[j] = wert[j] + array[i][j];
                 wert2[j] = wert2[j] + array[j][i];
@@ -149,32 +134,27 @@ spalten = i+1;
         }
 
 
-
-        System.out.print(monat+ "\t" );
+        System.out.print(monat + "\t");
 
         for (int i = 0; i < kunden; i++) {
 
-            System.out.print("Zeilensumme"+(i + 1) +"\t");
+            System.out.print("Zeilensumme" + (i + 1) + "\t");
 
         }
 
         System.out.println();
 
-        for (int i = 0; i < wert.length; i++){
+        for (int i = 0; i < wert.length; i++) {
 
-            System.out.print("Artikel"+(i+1)+ "\t");
+            System.out.print("Artikel" + (i + 1) + "\t");
 
 
-
-                System.out.print(wert[i]+"\t\t");
+            System.out.print(wert[i] + "\t\t");
             System.out.println(wert2[i] + "\t\t");
 
-            }
+        }
 
-            System.out.println();
-
-
-
+        System.out.println();
 
 
         return array;
