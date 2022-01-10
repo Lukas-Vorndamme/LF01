@@ -6,6 +6,7 @@ public class Lotto {
         for (int i = 0; i < lottozahlen.length; i++) {
             lottozahlen[i] = Math.round(Math.random() * 48 + 0.5);
         }
+
         for (int i = 0; i < lottozahlen.length ; i++) {
             for (int j = 0; j < lottozahlen.length; j++) {
 
