@@ -38,6 +38,7 @@ import java.io.IOException;
                     int auswahl;
                     do {
                         ok = false;
+                        System.out.println();
                         System.out.println("In welche Röhre soll deine Kugel geworfen werden?");
                         auswahl = IO.readInteger();
                         if (auswahl > array.length){
