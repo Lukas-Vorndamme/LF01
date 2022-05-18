@@ -1,3 +1,5 @@
+package businessObjects;
+
 import businessObjects.Adresse;
 import businessObjects.Kaufvertrag;
 import businessObjects.Vertragspartner;
