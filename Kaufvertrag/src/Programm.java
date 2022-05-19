@@ -3,6 +3,8 @@ import businessObjects.Ware;
 import dao.Vertragspartnerdao;
 import dao.Waredao;
 
+import java.util.ArrayList;
+
 public class Programm {
     public static void main(String[] args) throws ClassNotFoundException {
 
@@ -11,7 +13,14 @@ public class Programm {
         System.out.println(vertragspartner.getVorname());
 
         Waredao waredao = new Waredao();
-        Ware ware = waredao.read("1");
-        System.out.println(ware.getPreis()+"€");
+        Ware ware = waredao.read(3);
+        System.out.println(ware.getPreis() + "€");
+        System.out.println(ware.getBesonderheitenListe());
+
+
+        ArrayList<Vertragspartner> vertragspartnerArrayList = new ArrayList<>();
+        vertragspartnerArrayList = vertragspartnerdao.read();
+        System.out.println(vertragspartnerArrayList);
+
     }
 }

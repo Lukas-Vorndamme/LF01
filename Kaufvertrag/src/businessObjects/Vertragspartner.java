@@ -89,7 +89,7 @@ public class Vertragspartner {
 	 */
 	@Override
 	public String toString() {
-		String text = vorname + " " + nachname;
+		String text = "\n"+vorname + " " + nachname;
 		text += "\n\t\tAusweisNr: " + ausweisNr;
 		text += "\n\t\tbusinessObjects.Adresse: " + adresse;
 		return text;

@@ -4,6 +4,7 @@ import businessObjects.Adresse;
 import businessObjects.Vertragspartner;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Vertragspartnerdao {
 
@@ -20,10 +21,10 @@ public class Vertragspartnerdao {
      * @param ausweisNr Die Ausweisnummer
      * @return Der Gewünschte Vertragspartner
      */
-
+     Connection connection = null;
     public Vertragspartner read(String ausweisNr){
         Vertragspartner vertragspartner = null;
-        Connection connection = null;
+
         PreparedStatement preparedStatement = null;
 
             // Verbindung zu Datenbank Herstellen
@@ -67,5 +68,57 @@ public class Vertragspartnerdao {
             }
         }
        return vertragspartner;
+
+
+
+    }
+    public ArrayList<Vertragspartner> read() {
+
+        ArrayList<Vertragspartner> vertragspartnerArrayList = new ArrayList<>();
+        connection = null;
+        PreparedStatement preparedStatement = null;
+
+        // Verbindung zu Datenbank Herstellen
+
+        try {
+            connection = DriverManager.getConnection(CONNECTIONSTRING);
+
+            //SQL-Abfrage erstellen
+            String sql = "SELECT * From vertragspartner ";
+            preparedStatement = connection.prepareStatement(sql);
+
+            //SQL-Abfrage ausführen
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            //Zeiger auf den ersten Datensatz setzen
+            while (resultSet.next()) {
+                //ResulSet auswerten
+                String nr = resultSet.getString("ausweisNr");
+                String vorname = resultSet.getString("vorname");
+                String nachname = resultSet.getString("nachname");
+                String strasse = resultSet.getString("strasse");
+                String hausNr = resultSet.getString("hausNr");
+                String plz = resultSet.getString("plz");
+                String ort = resultSet.getString("ort");
+
+                //Vertragsprtner ertselle
+                Vertragspartner vertragspartner = new Vertragspartner(vorname, nachname);
+                vertragspartner.setAusweisNr(nr);
+                vertragspartner.setAdresse(new Adresse(strasse, hausNr, plz, ort));
+                vertragspartnerArrayList.add(vertragspartner);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return vertragspartnerArrayList ;
+
     }
 }

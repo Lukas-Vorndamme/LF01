@@ -3,6 +3,7 @@ package dao;
 import businessObjects.Ware;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Waredao {
     private final String CLASSNAME ="org.sqlite.JDBC";
@@ -11,7 +12,7 @@ public class Waredao {
     public Waredao () throws ClassNotFoundException {
         Class.forName(CLASSNAME);
     }
-    public Ware read(String warenNr){
+    public Ware read(int warenNr){
         Ware ware = null;
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -22,7 +23,7 @@ public class Waredao {
             //SQL-Abfrage erstellen
             String sql = "SELECT * From ware WHERE warenNr = ?";
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1,warenNr);
+            preparedStatement.setInt(1,warenNr);
 
             //SQL-Abfrage ausführen
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -31,16 +32,36 @@ public class Waredao {
             resultSet.next();
 
 
-            String nr = resultSet.getString("warenNr");
+            int nr = resultSet.getInt("warenNr");
             String bezeichnung = resultSet.getString("bezeichnung");
             String beschreibung = resultSet.getString("beschreibung");
             double preis = resultSet.getDouble("preis");
-
+            String maengel = resultSet.getString("maengel");
+            String besonderheiten = resultSet.getString("besonderheiten");
 
             ware = new Ware(bezeichnung,preis);
+            ware.setWarenNr(nr);
             ware.setBeschreibung(beschreibung);
             ware.setBezeichnung(bezeichnung);
             ware.setPreis(preis);
+            ware.setBesonderheitenListe(ware.getBesonderheitenListe());
+            ware.setMaengelListe(ware.getMaengelListe());
+
+            if (besonderheiten != null){
+                String[] besonderheitenarray = besonderheiten.split(";");
+            for (String b : besonderheitenarray) {
+                ware.getBesonderheitenListe().add(b.trim());
+            }}
+
+            if (maengel != null){
+                String[] maengelarray = maengel.split(";");
+            for (String m : maengelarray){
+                ware.getMaengelListe().add(m.trim());
+            }}
+
+
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Ware {
 
+	private int warenNr;
 	private String bezeichnung;
 	private String beschreibung;
 	private double preis;
@@ -20,6 +21,15 @@ public class Ware {
 		this.preis = preis;
 		besonderheitenListe = new ArrayList<String>();
 		maengelListe = new ArrayList<String>();
+
+	}
+
+	public void setWarenNr(int warenNr) {
+		this.warenNr = warenNr;
+	}
+
+	public int getWarenNr() {
+		return warenNr;
 	}
 
 	/**
@@ -85,6 +95,16 @@ public class Ware {
 	public ArrayList<String> getMaengelListe() {
 		return maengelListe;
 	}
+
+
+	public void setBesonderheitenListe(ArrayList<String> besonderheitenListe) {
+		this.besonderheitenListe = besonderheitenListe;
+	}
+
+	public void setMaengelListe(ArrayList<String> maengelListe) {
+		this.maengelListe = maengelListe;
+	}
+
 
 	/**
 	 * (non-Javadoc)
