@@ -22,5 +22,9 @@ public class Programm {
         vertragspartnerArrayList = vertragspartnerdao.read();
         System.out.println(vertragspartnerArrayList);
 
+        ArrayList<Ware> wareArrayList = new ArrayList<>();
+        wareArrayList = waredao.read();
+        System.out.println(wareArrayList);
+
     }
 }

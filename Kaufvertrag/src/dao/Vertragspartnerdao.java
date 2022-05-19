@@ -93,19 +93,7 @@ public class Vertragspartnerdao {
             //Zeiger auf den ersten Datensatz setzen
             while (resultSet.next()) {
                 //ResulSet auswerten
-                String nr = resultSet.getString("ausweisNr");
-                String vorname = resultSet.getString("vorname");
-                String nachname = resultSet.getString("nachname");
-                String strasse = resultSet.getString("strasse");
-                String hausNr = resultSet.getString("hausNr");
-                String plz = resultSet.getString("plz");
-                String ort = resultSet.getString("ort");
-
-                //Vertragsprtner ertselle
-                Vertragspartner vertragspartner = new Vertragspartner(vorname, nachname);
-                vertragspartner.setAusweisNr(nr);
-                vertragspartner.setAdresse(new Adresse(strasse, hausNr, plz, ort));
-                vertragspartnerArrayList.add(vertragspartner);
+                vertragspartnerArrayList.add(vertragspartner(resultSet));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -121,4 +109,21 @@ public class Vertragspartnerdao {
         return vertragspartnerArrayList ;
 
     }
+    public Vertragspartner vertragspartner(ResultSet resultSet) throws SQLException {
+
+        String nr = resultSet.getString("ausweisNr");
+        String vorname = resultSet.getString("vorname");
+        String nachname = resultSet.getString("nachname");
+        String strasse = resultSet.getString("strasse");
+        String hausNr = resultSet.getString("hausNr");
+        String plz = resultSet.getString("plz");
+        String ort = resultSet.getString("ort");
+
+        Vertragspartner vertragspartner= new Vertragspartner(vorname, nachname);
+        vertragspartner.setAusweisNr(nr);
+        vertragspartner.setAdresse(new Adresse(strasse, hausNr, plz, ort));
+        return vertragspartner;
+    }
+
+
 }
