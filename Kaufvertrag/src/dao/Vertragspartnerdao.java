@@ -46,6 +46,9 @@ public class Vertragspartnerdao {
             //ResulSet auswerten
            vertragspartner = createObjects(resultSet);
 
+
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -97,7 +100,10 @@ public class Vertragspartnerdao {
         return vertragspartnerArrayList ;
 
     }
-    public Vertragspartner createObjects(ResultSet resultSet) throws SQLException {
+
+
+
+    private Vertragspartner createObjects(ResultSet resultSet) throws SQLException {
 
         String nr = resultSet.getString("ausweisNr");
         String vorname = resultSet.getString("vorname");
@@ -107,10 +113,43 @@ public class Vertragspartnerdao {
         String plz = resultSet.getString("plz");
         String ort = resultSet.getString("ort");
 
-        Vertragspartner createObjects= new Vertragspartner(vorname, nachname);
+        Vertragspartner createObjects = new Vertragspartner(vorname, nachname);
         createObjects.setAusweisNr(nr);
         createObjects.setAdresse(new Adresse(strasse, hausNr, plz, ort));
+
         return createObjects;
+
+    }
+
+
+
+
+    public void delete(String ausweisNr) throws SQLException {
+     try {
+
+         connection = DriverManager.getConnection(CONNECTIONSTRING);
+         String sql = "DELETE FROM Vertragspartner where ausweisNr = ?";
+         PreparedStatement preparedStatement = connection.prepareStatement(sql);
+         preparedStatement.setString(1,ausweisNr);
+         preparedStatement.executeUpdate();
+
+
+     }catch (SQLException e){
+         e.printStackTrace();
+     }
+
+    }
+
+    public void insert(Vertragspartner vertragspartner) throws SQLException{
+
+        connection = DriverManager.getConnection(CONNECTIONSTRING);
+        String sql = "Insert into vertragspartner(vorname,nachname,ausweisNr) values(?,?,?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1,vertragspartner.getVorname());
+        preparedStatement.setString(2,vertragspartner.getNachname());
+        preparedStatement.setString(3,vertragspartner.getAusweisNr());
+        preparedStatement.executeUpdate();
+
     }
 
 

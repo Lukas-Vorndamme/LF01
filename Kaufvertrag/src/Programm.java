@@ -3,14 +3,17 @@ import businessObjects.Ware;
 import dao.Vertragspartnerdao;
 import dao.Waredao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Programm {
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
         Vertragspartnerdao vertragspartnerdao = new Vertragspartnerdao();
         Vertragspartner vertragspartner = vertragspartnerdao.read("396435436439");
         System.out.println(vertragspartner.getVorname());
+
+        vertragspartnerdao.delete("396435436439");
 
         Waredao waredao = new Waredao();
         Ware ware = waredao.read(3);
@@ -25,6 +28,8 @@ public class Programm {
         ArrayList<Ware> wareArrayList = new ArrayList<>();
         wareArrayList = waredao.read();
         System.out.println(wareArrayList);
+
+
 
     }
 }
