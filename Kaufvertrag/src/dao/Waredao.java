@@ -35,35 +35,7 @@ public class Waredao {
             resultSet.next();
 
 
-            int nr = resultSet.getInt("warenNr");
-            String bezeichnung = resultSet.getString("bezeichnung");
-            String beschreibung = resultSet.getString("beschreibung");
-            double preis = resultSet.getDouble("preis");
-            String maengel = resultSet.getString("maengel");
-            String besonderheiten = resultSet.getString("besonderheiten");
-
-            ware = new Ware(bezeichnung, preis);
-            ware.setWarenNr(nr);
-            ware.setBeschreibung(beschreibung);
-            ware.setBezeichnung(bezeichnung);
-            ware.setPreis(preis);
-            ware.setBesonderheitenListe(ware.getBesonderheitenListe());
-            ware.setMaengelListe(ware.getMaengelListe());
-
-            if (besonderheiten != null) {
-                String[] besonderheitenarray = besonderheiten.split(";");
-                for (String b : besonderheitenarray) {
-                    ware.getBesonderheitenListe().add(b.trim());
-                }
-            }
-
-            if (maengel != null) {
-                String[] maengelarray = maengel.split(";");
-                for (String m : maengelarray) {
-                    ware.getMaengelListe().add(m.trim());
-                }
-            }
-
+            ware = createObjects(resultSet);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -95,10 +67,9 @@ public class Waredao {
             //Zeiger auf den ersten Datensatz setzen
            while (resultSet.next()){
 
-               wareArrayList.add(ware(resultSet));
+               wareArrayList.add(createObjects(resultSet));
 
            }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -113,7 +84,9 @@ public class Waredao {
 
 
     }
-    public Ware ware(ResultSet resultSet) throws SQLException{
+
+
+    public Ware createObjects(ResultSet resultSet) throws SQLException{
 
         int nr = resultSet.getInt("warenNr");
         String bezeichnung = resultSet.getString("bezeichnung");
@@ -122,7 +95,7 @@ public class Waredao {
         String maengel = resultSet.getString("maengel");
         String besonderheiten = resultSet.getString("besonderheiten");
 
-       Ware ware = new Ware(bezeichnung, preis);
+        Ware ware = new Ware(bezeichnung, preis);
         ware.setWarenNr(nr);
         ware.setBeschreibung(beschreibung);
         ware.setBezeichnung(bezeichnung);
@@ -143,6 +116,8 @@ public class Waredao {
                 ware.getMaengelListe().add(m.trim());
             }
         }
+
         return ware;
     }
+
 }
