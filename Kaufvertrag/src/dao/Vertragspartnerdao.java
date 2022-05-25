@@ -8,26 +8,28 @@ import java.util.ArrayList;
 
 public class Vertragspartnerdao {
 
-    private final String CLASSNAME ="org.sqlite.JDBC";
+    private final String CLASSNAME = "org.sqlite.JDBC";
     private final String CONNECTIONSTRING = "jdbc:sqlite:Kaufvertrag/src/data/Kaufvertrag.db";
 
 
-    public Vertragspartnerdao () throws ClassNotFoundException {
+    public Vertragspartnerdao() throws ClassNotFoundException {
         Class.forName(CLASSNAME);
     }
 
     /**
      * Liest einen vertragsparner auf basis seiner asweisnummer
+     *
      * @param ausweisNr Die Ausweisnummer
      * @return Der Gewünschte Vertragspartner
      */
-     Connection connection = null;
-    public Vertragspartner read(String ausweisNr){
+    Connection connection = null;
+
+    public Vertragspartner read(String ausweisNr) {
         Vertragspartner vertragspartner = null;
 
         PreparedStatement preparedStatement = null;
 
-            // Verbindung zu Datenbank Herstellen
+        // Verbindung zu Datenbank Herstellen
 
         try {
             connection = DriverManager.getConnection(CONNECTIONSTRING);
@@ -35,7 +37,7 @@ public class Vertragspartnerdao {
             //SQL-Abfrage erstellen
             String sql = "SELECT * From vertragspartner WHERE ausweisNr = ?";
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1,ausweisNr);
+            preparedStatement.setString(1, ausweisNr);
 
             //SQL-Abfrage ausführen
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -44,25 +46,23 @@ public class Vertragspartnerdao {
             resultSet.next();
 
             //ResulSet auswerten
-           vertragspartner = createObjects(resultSet);
-
-
+            vertragspartner = createObjects(resultSet);
 
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-       return vertragspartner;
-
+        return vertragspartner;
 
 
     }
+
     public ArrayList<Vertragspartner> read() {
 
         ArrayList<Vertragspartner> vertragspartnerArrayList = new ArrayList<>();
@@ -97,10 +97,9 @@ public class Vertragspartnerdao {
 
         }
 
-        return vertragspartnerArrayList ;
+        return vertragspartnerArrayList;
 
     }
-
 
 
     private Vertragspartner createObjects(ResultSet resultSet) throws SQLException {
@@ -122,35 +121,35 @@ public class Vertragspartnerdao {
     }
 
 
-
-
     public void delete(String ausweisNr) throws SQLException {
-     try {
+        try {
 
-         connection = DriverManager.getConnection(CONNECTIONSTRING);
-         String sql = "DELETE FROM Vertragspartner where ausweisNr = ?";
-         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-         preparedStatement.setString(1,ausweisNr);
-         preparedStatement.executeUpdate();
+            connection = DriverManager.getConnection(CONNECTIONSTRING);
+            String sql = "DELETE FROM Vertragspartner where ausweisNr = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, ausweisNr);
+            preparedStatement.executeUpdate();
 
 
-     }catch (SQLException e){
-         e.printStackTrace();
-     }
-
-    }
-
-    public void insert(Vertragspartner vertragspartner) throws SQLException{
-
-        connection = DriverManager.getConnection(CONNECTIONSTRING);
-        String sql = "Insert into vertragspartner(vorname,nachname,ausweisNr) values(?,?,?)";
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setString(1,vertragspartner.getVorname());
-        preparedStatement.setString(2,vertragspartner.getNachname());
-        preparedStatement.setString(3,vertragspartner.getAusweisNr());
-        preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 
+    public void insert(Vertragspartner vertragspartner) throws SQLException {
+        try {
+            connection = DriverManager.getConnection(CONNECTIONSTRING);
+            String sql = "Insert into vertragspartner(vorname,nachname,ausweisNr) values(?,?,?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, vertragspartner.getVorname());
+            preparedStatement.setString(2, vertragspartner.getNachname());
+            preparedStatement.setString(3, vertragspartner.getAusweisNr());
+            preparedStatement.executeUpdate();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+    }
 }
