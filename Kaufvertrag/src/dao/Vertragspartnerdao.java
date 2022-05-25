@@ -138,13 +138,19 @@ public class Vertragspartnerdao {
     }
 
     public void insert(Vertragspartner vertragspartner) throws SQLException {
+        connection = null;
         try {
             connection = DriverManager.getConnection(CONNECTIONSTRING);
-            String sql = "Insert into vertragspartner(vorname,nachname,ausweisNr) values(?,?,?)";
+            String sql = "Insert into Vertragspartner values(?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, vertragspartner.getVorname());
-            preparedStatement.setString(2, vertragspartner.getNachname());
-            preparedStatement.setString(3, vertragspartner.getAusweisNr());
+            preparedStatement.setString(1, vertragspartner.getAusweisNr());
+            preparedStatement.setString(2, vertragspartner.getVorname());
+            preparedStatement.setString(3, vertragspartner.getNachname());
+            preparedStatement.setString(4, vertragspartner.getAdresse().getStrasse());
+            preparedStatement.setString(5, vertragspartner.getAdresse().getHausNr());
+            preparedStatement.setString(6, vertragspartner.getAdresse().getPlz());
+            preparedStatement.setString(7, vertragspartner.getAdresse().getOrt());
+
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {

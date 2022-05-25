@@ -1,3 +1,4 @@
+import businessObjects.Adresse;
 import businessObjects.Vertragspartner;
 import businessObjects.Ware;
 import dao.Vertragspartnerdao;
@@ -22,6 +23,7 @@ public class Programm {
 
         Vertragspartner vertragspartner1 = new Vertragspartner("Hans","peter");
         vertragspartner1.setAusweisNr("215");
+        vertragspartner1.setAdresse(new Adresse("Hurensohn allee","69","42069","Bumshausen"));
         vertragspartnerdao.insert(vertragspartner1);
 
         ArrayList<Vertragspartner> vertragspartnerArrayList = new ArrayList<>();
