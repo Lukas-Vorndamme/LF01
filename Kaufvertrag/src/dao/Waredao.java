@@ -119,5 +119,41 @@ public class Waredao {
 
         return ware;
     }
+    private String mapListToString(ArrayList<String> arraylist)throws SQLException{
 
-}
+        String liste = "";
+
+        for ( String m  :  arraylist)
+        {
+        liste += m + "; ";
+
+        }
+        return liste;
+    }
+
+
+
+    public void insert(Ware ware) throws SQLException{
+
+
+        connection = null;
+        try {
+            connection = DriverManager.getConnection(CONNECTIONSTRING);
+            String sql = "Insert into Ware values(Bezeichnung,Beschreibung,Preis,Besonderheiten,Maengel)"
+                    + "VALUES (?,?,?,?,?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, ware.getBezeichnung());
+            preparedStatement.setString(2, ware.getBeschreibung());
+            preparedStatement.setDouble(3, ware.getPreis());
+            preparedStatement.setString(4, mapListToString(ware.getBesonderheitenListe()));
+            preparedStatement.setString(5, mapListToString(ware.getMaengelListe()));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    }
+
