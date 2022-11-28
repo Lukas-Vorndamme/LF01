@@ -60,6 +60,8 @@ public class Abfragen_Program {
                             System.out.println("Wieviel € kostet die Konsole?");
                             preis = IO.readDouble();
                             Konsolen konsolen = new Konsolen(name,preis);
+                            konsolen.setMarke(marke);
+                            konsolen.setZubehör(zubehör);
                             konsolendao.insert(konsolen);
                             System.out.println(line);
 
