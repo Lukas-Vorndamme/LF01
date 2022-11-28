@@ -1,11 +1,14 @@
-public class Aktie {
+package dao;
+
+public class Aktie extends Gegenstand {
 
     private String unternehmen;
-    private double wert;
+    private double nennwert;
 
-    Aktie(String unternehmen, double wert){
+        public Aktie(int id,double wert,String unternehmen, double nennwert){
+        super(id,wert);
         this.unternehmen = unternehmen;
-        this.wert = wert;
+        this.nennwert = nennwert;
     }
 
     public void setUnternehmen(String unternehmen) {
@@ -16,19 +19,19 @@ public class Aktie {
         return unternehmen;
     }
 
-    public void setWert(double wert) {
-        this.wert = wert;
+    public void setWert(double nennwert) {
+        this.nennwert = nennwert;
     }
 
     public double getWert() {
-        return wert;
+        return nennwert;
     }
 
     @Override
     public String toString() {
-        return "Aktie{" +
+        return "dao.Aktie{" +
                 "unternehmen='" + unternehmen + '\'' +
-                ", wert=" + wert +
+                ", wert=" + nennwert +
                 '}';
     }
 }

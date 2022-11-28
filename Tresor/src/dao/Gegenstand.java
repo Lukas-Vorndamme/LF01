@@ -1,12 +1,17 @@
-public class Gegenstand {
+package dao;
+
+public abstract class Gegenstand {
 
     private int id;
     private double wert;
 
-    Gegenstand(int id, double wert, String bezeichnung){
+        public Gegenstand(int id, double wert){
         this.id = id;
         this.wert = wert;
+
     }
+
+
 
     public void setId(int id) {
         this.id = id;
@@ -26,7 +31,7 @@ public class Gegenstand {
 
     @Override
     public String toString() {
-        return "Gegenstand{" +
+        return "dao.Gegenstand{" +
                 "id=" + id +
                 ", wert=" + wert +
                 '}';
