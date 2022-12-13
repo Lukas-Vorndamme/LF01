@@ -29,10 +29,9 @@ public class Aktie extends Gegenstand {
 
     @Override
     public String toString() {
-        return "dao.Aktie{" +
-                "unternehmen='" + unternehmen + '\'' +
-                ", wert=" + nennwert +
-                '}';
+        return super.toString() + "Aktie" +
+                "Unternehmen = " + unternehmen +
+                "Nennwert = " + nennwert;
     }
 }
 

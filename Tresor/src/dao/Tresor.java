@@ -1,34 +1,46 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
-  public class Tresor {
+public class Tresor {
 
-  private ArrayList<Gegenstand> gegenstaende;
+    double summe = 0;
+    private ArrayList<Gegenstand> gegenstaende = new ArrayList<>();
 
-  public Tresor(ArrayList<Gegenstand> gegenstaende){
-      this.gegenstaende = gegenstaende;
-  }
-  public void addGegenstand(Gegenstand gegenstand){
-      gegenstaende.add(gegenstand);
-  }
 
-  public Gegenstand getGegenstand(int id) throws GegenstandNichtGefundenException{
-      for (Gegenstand g : gegenstaende){
-        if(g.getId() == id) {
-            return g;
+    public void addGegenstand(Gegenstand gegenstand) {
+        gegenstaende.add(gegenstand);
+    }
+
+
+    public void getGegenstand(int id, String Bezeichnung) throws GegenstandNichtGefundenException {
+        GegenstandNichtGefundenException e = new GegenstandNichtGefundenException(id);
+        for (Gegenstand g : gegenstaende) {
+            if (Objects.equals(g.getId(), id)) {
+                System.out.println("Der Gegenstand mit der Gescuhten ID ist im Tresor vorhanden");
+                System.out.println("Die Gesuchte ID gehört zum gegenstand " + Bezeichnung);
+            } else {
+                System.out.println(e.getMessage());
+            }
         }
-      }
-      throw new GegenstandNichtGefundenException(id);
+    }
 
-  }
+    public void removeGegenstand(Gegenstand gegenstand) throws GegenstandNichtGefundenException {
+        gegenstaende.remove(gegenstand);
+    }
 
-  public void removeGegenstand(Gegenstand gegenstand) throws GegenstandNichtGefundenException{
+    public double berechnenGesamtwert() {
+        for (int i = 0; i < gegenstaende.size(); i++)
+            summe += gegenstaende.get(i).getWert();
+        return summe;
+    }
+    @Override
+    public String toString() {
+        return super.toString() + "Tresor" +
+                "\nSumme = " + berechnenGesamtwert() +
+                "\nGegenstaende = " + gegenstaende +
+                "\nGegenstand = " + gegenstaende;
 
-      if(gegenstaende.contains(gegenstand)){
-          gegenstaende.remove(gegenstand);
-      }else {
-          throw new GegenstandNichtGefundenException(gegenstand.getId());
-      }
-  }
+    }
 }

@@ -13,14 +13,13 @@ public class Schmuck extends Gegenstand {
         this.bezeichnung = bezeichnung;
     }
 
-    public String getBezeichnung() {
+    public String getBezeichnung(){
         return bezeichnung;
     }
 
     @Override
     public String toString() {
-        return "dao.schmuck{" +
-                "bezeichnung='" + bezeichnung + '\'' +
-                '}';
+        return super.toString() + "Schmuck" +
+                "\nBezeichnung = " + bezeichnung;
     }
 }
