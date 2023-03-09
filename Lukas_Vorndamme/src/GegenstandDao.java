@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +25,12 @@ public class GegenstandDao {
         if(!gegenstandMap.containsKey(gegenstand)){
             throw new GegenstandNichtVorhandenExeption();
         }
+        gegenstandMap.replace(gegenstand.getNr(), gegenstand);
     };
-    public void delete(String nr) throws GegenstandNichtVorhandenExeption{};
+    public void delete(String nr) throws GegenstandNichtVorhandenExeption{
+        if(!gegenstandMap.containsKey(gegenstandMap)){
+            throw new GegenstandNichtVorhandenExeption();
+        }
+        gegenstandMap.remove(nr);
+    };
 }
